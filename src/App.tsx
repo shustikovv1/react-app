@@ -6,6 +6,7 @@ import styled from "styled-components";
 import {StyledBtn, SuperBtn} from "./components/Styled/Button.styled";
 import {Link} from "./components/Styled/Link.styled";
 import {Menu} from "./components/Styled/Menu.styled";
+import {myTheme} from "./components/styles/Theme.styled";
 
 function App() {
   return (
@@ -18,10 +19,13 @@ function App() {
             </ul>
         </Menu>
         <Box>
-            <Link href="#">Link</Link>
-            <StyledBtn as={Link} href="#">Link</StyledBtn>
-            <StyledBtn>Push</StyledBtn>
-            <SuperBtn>SUPER</SuperBtn>
+            {/*<Link href="#">Link</Link>*/}
+            {/*<StyledBtn as={Link} href="#">Link</StyledBtn>*/}
+            <StyledBtn color={myTheme.colors.secondary} primary>Push</StyledBtn>
+            <StyledBtn color={myTheme.colors.primary} primary>Push</StyledBtn>
+            <StyledBtn color="green" outlined>Push</StyledBtn>
+            {/*<SuperBtn color="red">SUPER</SuperBtn>*/}
+            {/*<input type="radio"/>*/}
         </Box>
         {/*<PageTitle title={"Page Title"}/>*/}
         {/*<PageTitle title={"Page Title2"}/>*/}
@@ -53,7 +57,7 @@ const Box = styled.div`
      cursor: zoom-in;
    }
   
-  @media screen and (max-width: 800px) {
+  @media ${myTheme.media.tablet} {
     flex-direction: column;
   }
 `
